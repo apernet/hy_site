@@ -5,7 +5,7 @@ weight: 1
 
 ### Linux 服务端部署
 
-- 从 https://github.com/tobyxdd/hysteria/releases 下载编译好的版本
+- 从 https://github.com/HyNetwork/hysteria/releases 下载编译好的版本
 - 使用 Docker 或 Docker Compose: [Docker]({{< ref "Docker.md" >}})
 - 使用 Arch Linux AUR: https://aur.archlinux.org/packages/hysteria/
 - 使用服务端安装脚本: https://raw.githubusercontent.com/HyNetwork/hysteria/master/install_server.sh

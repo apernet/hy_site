@@ -5,7 +5,7 @@ weight: 1
 
 ### Linux server deployment
 
-- Download pre-built binaries from https://github.com/tobyxdd/hysteria/releases
+- Download pre-built binaries from https://github.com/HyNetwork/hysteria/releases
 - Use Docker or Docker Compose: [Docker]({{< ref "Docker.md" >}})
 - Use our Arch Linux AUR: https://aur.archlinux.org/packages/hysteria/
 - Use the server installation script: https://raw.githubusercontent.com/HyNetwork/hysteria/master/install_server.sh
