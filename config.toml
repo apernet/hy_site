@@ -1,22 +1,19 @@
 baseURL = 'https://hysteria.network'
-languageCode = 'en-us'
 title = 'Hysteria'
-theme = 'maverick'
+theme = 'hugo-book'
 
-[menu]
-    [[menu.main]]
-        name = "Home"
+defaultContentLanguage = 'en'
+
+[languages]
+    [languages.en]
+        languageName = 'English'
+        contentDir = 'content/en'
         weight = 1
-        url = "/"
-    [[menu.main]]
-        name = "GitHub"
+    [languages.zh]
+        languageName = '中文'
+        contentDir = 'content/zh'
         weight = 2
-        url = "https://github.com/HyNetwork/hysteria"
-    [[menu.main]]
-        name = "Wiki"
-        weight = 3
-        url = "https://github.com/HyNetwork/hysteria/wiki"
-    [[menu.main]]
-        name = "Donations"
-        weight = 4
-        url = "/donations/"
+
+[params]
+    BookComments = false
+    BookLogo = 'assets/thunder.png'
