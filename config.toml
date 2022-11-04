@@ -1,0 +1,18 @@
+baseURL = 'https://hysteria.network'
+languageCode = 'en-us'
+title = 'Hysteria'
+theme = 'maverick'
+
+[menu]
+    [[menu.main]]
+        name = "Home"
+        weight = 1
+        url = "/"
+    [[menu.main]]
+        name = "GitHub"
+        weight = 2
+        url = "https://github.com/HyNetwork/hysteria"
+    [[menu.main]]
+        name = "Donations"
+        weight = 3
+        url = "/donations/"
