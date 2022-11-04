@@ -13,6 +13,10 @@ theme = 'maverick'
         weight = 2
         url = "https://github.com/HyNetwork/hysteria"
     [[menu.main]]
-        name = "Donations"
+        name = "Wiki"
         weight = 3
+        url = "https://github.com/HyNetwork/hysteria/wiki"
+    [[menu.main]]
+        name = "Donations"
+        weight = 4
         url = "/donations/"
