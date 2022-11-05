@@ -17,3 +17,6 @@ defaultContentLanguage = 'en'
 [params]
     BookComments = false
     BookLogo = 'assets/thunder.png'
+
+[markup.goldmark.renderer]
+unsafe = true
