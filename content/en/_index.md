@@ -7,6 +7,8 @@ draft: false
 
 [![GitHub](/assets/github.png)](https://github.com/HyNetwork/hysteria)
 
+Telegram [Discussion Group](https://t.me/hysteria_github), [Release Channel](https://t.me/hysteria_releases)
+
 Hysteria is a feature-packed proxy & relay tool optimized for lossy, unstable connections (e.g. satellite networks,
 congested public Wi-Fi, connecting to foreign servers from China) powered by a customized protocol based on QUIC.
 

@@ -6,6 +6,8 @@ title: "主页"
 
 [![GitHub](/assets/github.png)](https://github.com/HyNetwork/hysteria)
 
+Telegram [讨论群组](https://t.me/hysteria_github), [发布频道](https://t.me/hysteria_releases)
+
 Hysteria 是一个功能丰富的，专为恶劣网络环境（如卫星网络、拥挤的公共 Wi-Fi、从中国连接境外服务器等）进行优化的双边加速工具，基于修改版的 QUIC 协议。
 
 ## 常见用例
