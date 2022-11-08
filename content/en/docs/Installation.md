@@ -24,8 +24,8 @@ weight: 1
 
 ### Android
 
-- [Matsuri](https://github.com/MatsuriDayo/Matsuri) with [hysteria-plugin](https://github.com/MatsuriDayo/plugins/releases?q=Hysteria)
 - [SagerNet](https://github.com/SagerNet/SagerNet) with [hysteria-plugin](https://github.com/SagerNet/SagerNet/releases?q=Hysteria)
+- [Matsuri](https://github.com/MatsuriDayo/Matsuri) with [hysteria-plugin](https://github.com/MatsuriDayo/plugins/releases?q=Hysteria)
 - [Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid)
 
 ### iOS
