@@ -118,6 +118,7 @@ Hysteria 支持多种 DNS 协议。
   "quit_on_disconnect": false, // 连接断开时退出程序
   "handshake_timeout": 10, // 握手超时，单位为秒
   "idle_timeout": 60, // 空闲超时，单位为秒。客户端会以这个值的 2/5 作为发送心跳包的间隔
+  "hop_interval": 120, // 端口跳跃间隔，单位为秒。见 端口跳跃 页面
   "socks5": {
     "listen": "127.0.0.1:1080", // SOCKS5 监听地址
     "timeout": 300, // TCP 超时秒数

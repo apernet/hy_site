@@ -119,6 +119,7 @@ When no scheme is provided and the address is just an IP address, it wil be assu
   "quit_on_disconnect": false, // Quit the client when disconnected from the server
   "handshake_timeout": 10, // Handshake timeout in seconds
   "idle_timeout": 60, // Idle timeout in seconds. The client will send a ping to the server every 2/5 of this value.
+  "hop_interval": 120, // Port hopping interval in seconds. See port hopping page for details.
   "socks5": {
     "listen": "127.0.0.1:1080", // SOCKS5 listen address
     "timeout": 300, // TCP timeout in seconds
