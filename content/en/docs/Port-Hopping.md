@@ -42,6 +42,8 @@ ip6tables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-d
 
 The server can then listen on port 5666, while the client connects with `example.com:20000-50000`.
 
+Naturally, just because the server is available on multiple ports does not mean that clients must use them all. If a client does not want to enable port hopping, it can still just pick a single port to connect to.
+
 ## Why is this useful?
 
 Users in China often report that their ISPs block/restrict persistent UDP connections to a single port. Port hopping should invalidate this kind of mechanism.
