@@ -5,10 +5,10 @@ weight: 1
 
 ### Linux 服务端部署
 
-- 从 https://github.com/HyNetwork/hysteria/releases 下载编译好的版本
-- 使用 Docker 或 Docker Compose: [Docker]({{< ref "Docker.md" >}})
-- 使用 Arch Linux AUR: https://aur.archlinux.org/packages/hysteria/
-- 使用服务端安装脚本: https://raw.githubusercontent.com/HyNetwork/hysteria/master/install_server.sh
+- 从 [GitHub Releases](https://github.com/HyNetwork/hysteria/releases) 下载编译好的版本
+- [Docker / Docker Compose]({{< ref "Docker.md" >}})
+- [Arch Linux AUR](https://aur.archlinux.org/packages/hysteria/)
+- [Linux 服务端部署脚本](https://raw.githubusercontent.com/HyNetwork/hysteria/master/install_server.sh)
 - 自己用 `build.sh` (Linux) / `build.ps1` (Windows) 从源码编译
 
 ### Windows, macOS, Linux 客户端
@@ -32,3 +32,7 @@ weight: 1
 
 - [Stash](https://apps.apple.com/app/stash/id1596063349)
 - [Shadowrocket](https://apps.apple.com/us/app/shadowrocket/id932747118)
+
+----------
+
+如果你是某个支持 Hysteria 的项目的开发者，或者你作为用户发现了其他支持 Hysteria 的项目，请联系我们将其列在这里。

@@ -7,7 +7,11 @@ This is only a bare-bones example to get the server and client running. Go to [A
 
 ### Server
 
-Create a `config.json` under the root directory of the program:
+Create a `config.json` in the directory.
+
+The Hysteria server **requires** a TLS certificate. You have two options:
+
+1. Use the built-in ACME client to automatically obtain a free certificate from Let's Encrypt. This is the easiest option, assuming you have a domain name resolved to your server and a valid email address.
 
 ```json
 {
@@ -22,9 +26,7 @@ Create a `config.json` under the root directory of the program:
 }
 ```
 
-Hysteria requires a TLS certificate. You can either get a trusted TLS certificate from Let's Encrypt automatically using
-the built-in ACME integration, or provide it yourself. It does not have to be valid and trusted, but in that case the
-clients need additional configuration. To use your own existing TLS certificate, refer to this config:
+2. Provide your own certificate files.
 
 ```json
 {
@@ -82,13 +84,7 @@ If your server certificate is not issued by a trusted CA, you need to specify th
 with `"ca": "/path/to/file.ca"` on the client or use `"insecure": true` to ignore all certificate errors (not
 recommended).
 
-`up_mbps` and `down_mbps` are mandatory on the client side. Try to fill in these values as accurately as possible
-according to your network conditions, as they are crucial for Hysteria to work optimally.
-
-Some users may attempt to forward other encrypted proxy protocols such as Shadowsocks with relay. While this technically
-works, it's not optimal from a performance standpoint - Hysteria itself uses TLS, considering that the proxy protocol
-being forwarded is also encrypted, and the fact that almost all sites are now using HTTPS, it essentially becomes triple
-encryption. If you need a proxy, just use our proxy modes.
+`up_mbps` and `down_mbps` are **mandatory** on the client side. **They should reflect the bandwidth of your current network as accurately as possible.** If you don't know what to put here, we strongly suggest you to use a speed test website to measure your network speed first. Having inaccurate values (both too high or too low) will result in degraded performance.
 
 To launch the client, simply run
 
