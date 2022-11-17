@@ -5,11 +5,11 @@ weight: 1
 
 ### Linux server deployment
 
-- Download pre-built binaries from https://github.com/HyNetwork/hysteria/releases
-- Use Docker or Docker Compose: [Docker]({{< ref "Docker.md" >}})
-- Use our Arch Linux AUR: https://aur.archlinux.org/packages/hysteria/
-- Use the server installation script: https://raw.githubusercontent.com/HyNetwork/hysteria/master/install_server.sh
-- Build from source with `build.sh` (Linux) / `build.ps1` (Windows)
+- Download executables from [GitHub Releases](https://github.com/HyNetwork/hysteria/releases)
+- [Docker / Docker Compose]({{< ref "Docker.md" >}})
+- [Arch Linux AUR](https://aur.archlinux.org/packages/hysteria/)
+- [Linux server deployment script](https://raw.githubusercontent.com/HyNetwork/hysteria/master/install_server.sh)
+- Clone and build from source with `build.sh` (Linux) / `build.ps1` (Windows)
 
 ### Windows, Linux, macOS clients
 
@@ -32,3 +32,7 @@ weight: 1
 
 - [Stash](https://apps.apple.com/app/stash/id1596063349)
 - [Shadowrocket](https://apps.apple.com/us/app/shadowrocket/id932747118)
+
+----------
+
+If you are a developer of a project that supports Hysteria, or you have found a project that supports Hysteria as a user, contact us to have it listed here.

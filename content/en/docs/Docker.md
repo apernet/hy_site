@@ -5,32 +5,33 @@ weight: 12
 
 ## About Dockerfile
 
-The hysteria docker image is based on the **alpine** system. This means that
-**some glibc calls may not work if you run programs that depend on glibc in a container.**
+Be aware that our official Docker image is based on **alpine**. This means that
+**some glibc calls may not work if you run programs that depend on glibc**.
 
-By default, **bash** is installed in the docker container for debugging, **tzdata** is used to
-provide container time zone configuration, and **ca-certificates** is used to ensure the 
-trust of the ssl certificate chain; in addition, the docker container does not contain 
-any tools other than the alpine standard system.
+By default, **bash** is installed for debugging, **tzdata** is used to
+provide time zone configuration, and **ca-certificates** is used to ensure the 
+trust of the ssl certificate chain. It does not contain any other tools that are
+not part of the standard alpine system.
 
-The hysteria binary is installed in `/usr/local/bin/hysteria`, and the **ENTRYPOINT**
-of the docker container is set to **execute the `hysteria` command**; this means that
-the `hysteria` command is always the first command.
+The hysteria executable is at `/usr/local/bin/hysteria`. **ENTRYPOINT** is set 
+to **execute the `hysteria` command** - this means that when the container starts,
+the `hysteria` command will be executed by default.
 
-## How to use docker image?
+## Usage
 
-### For standard docker users
+### For average Docker users
 
-You can mount the configuration file to any location of the docker container and use it.
+You can mount the configuration file to any location and use `-c` to specify the
+location.
 
-In the following commands, we assume that the **`/root/hysteria.json`** configuration
+In the following command, we assume that the **`/root/hysteria.json`** configuration
 file is mounted to **`/etc/hysteria.json`**:
 
 ⚠️ Note: **If you don't want to use the host network (`--network=host`), please make sure that
 the hysteria UDP port is correctly mapped (`-p 1234:1234/udp`)**
 
 ```sh
-# Please replace `/root/hysteria.json` with the actual configuration file location
+# Please replace `/root/hysteria.json` with your actual configuration file path
 docker run -dt --network=host --name hysteria \
     -v /root/hysteria.json:/etc/hysteria.json \
     tobyxdd/hysteria -c /etc/hysteria.json server
@@ -38,8 +39,7 @@ docker run -dt --network=host --name hysteria \
 
 ### For docker-compose users
 
-First, you need to create a directory with any name, and then copy [docker-compose.yaml](https://raw.githubusercontent.com/HyNetwork/hysteria/master/docker-compose.yaml) to 
-that directory. Finally, create your configuration file and start it.
+Create a directory and copy [docker-compose.yaml](https://raw.githubusercontent.com/HyNetwork/hysteria/master/docker-compose.yaml) to it. Create your own configuration file and mount it to the container.
 
 ```sh
 # Create dir
@@ -64,8 +64,6 @@ cat <<EOF > hysteria.json
 }
 EOF
 
-# Start container
+# Start
 docker-compose up -d
 ```
-
-
