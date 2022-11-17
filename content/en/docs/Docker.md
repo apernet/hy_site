@@ -39,14 +39,14 @@ docker run -dt --network=host --name hysteria \
 
 ### For docker-compose users
 
-Create a directory and copy [docker-compose.yaml](https://raw.githubusercontent.com/HyNetwork/hysteria/master/docker-compose.yaml) to it. Create your own configuration file and mount it to the container.
+Create a directory and copy [docker-compose.yaml](https://raw.githubusercontent.com/apernet/hysteria/master/docker-compose.yaml) to it. Create your own configuration file and mount it to the container.
 
 ```sh
 # Create dir
 mkdir hysteria && cd hysteria
 
 # Download the docker-compose example config
-wget https://raw.githubusercontent.com/HyNetwork/hysteria/master/docker-compose.yaml
+wget https://raw.githubusercontent.com/apernet/hysteria/master/docker-compose.yaml
 
 # Create your config
 cat <<EOF > hysteria.json

@@ -34,7 +34,7 @@ docker run -dt --network=host --name hysteria \
 
 ### Docker Compose 用户 
 
-首先需要创建一个任意名称的目录，然后将项目内的 [docker-compose.yaml](https://raw.githubusercontent.com/HyNetwork/hysteria/master/docker-compose.yaml) 文件复制到该目录；
+首先需要创建一个任意名称的目录，然后将项目内的 [docker-compose.yaml](https://raw.githubusercontent.com/apernet/hysteria/master/docker-compose.yaml) 文件复制到该目录；
 最后创建自己的配置文件并启动即可。
 
 ```sh
@@ -42,7 +42,7 @@ docker run -dt --network=host --name hysteria \
 mkdir hysteria && cd hysteria
 
 # Download the docker-compose example config
-wget https://raw.githubusercontent.com/HyNetwork/hysteria/master/docker-compose.yaml
+wget https://raw.githubusercontent.com/apernet/hysteria/master/docker-compose.yaml
 
 # Create your config
 cat <<EOF > hysteria.json

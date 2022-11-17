@@ -5,10 +5,10 @@ weight: 1
 
 ### Linux server deployment
 
-- Download executables from [GitHub Releases](https://github.com/HyNetwork/hysteria/releases)
+- Download executables from [GitHub Releases](https://github.com/apernet/hysteria/releases)
 - [Docker / Docker Compose]({{< ref "Docker.md" >}})
 - [Arch Linux AUR](https://aur.archlinux.org/packages/hysteria/)
-- [Linux server deployment script](https://raw.githubusercontent.com/HyNetwork/hysteria/master/install_server.sh)
+- [Linux server deployment script](https://raw.githubusercontent.com/apernet/hysteria/master/install_server.sh)
 - Clone and build from source with `build.sh` (Linux) / `build.ps1` (Windows)
 
 ### Windows, Linux, macOS clients

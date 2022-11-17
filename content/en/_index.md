@@ -5,7 +5,7 @@ draft: false
 
 ![Logo](/assets/logo.png)
 
-[![GitHub](/assets/github.png)](https://github.com/HyNetwork/hysteria)
+[![GitHub](/assets/github.png)](https://github.com/apernet/hysteria)
 
 ![AperNet](/assets/AperNetLogo.png)
 

@@ -5,10 +5,10 @@ weight: 1
 
 ### Linux 服务端部署
 
-- 从 [GitHub Releases](https://github.com/HyNetwork/hysteria/releases) 下载编译好的版本
+- 从 [GitHub Releases](https://github.com/apernet/hysteria/releases) 下载编译好的版本
 - [Docker / Docker Compose]({{< ref "Docker.md" >}})
 - [Arch Linux AUR](https://aur.archlinux.org/packages/hysteria/)
-- [Linux 服务端部署脚本](https://raw.githubusercontent.com/HyNetwork/hysteria/master/install_server.sh)
+- [Linux 服务端部署脚本](https://raw.githubusercontent.com/apernet/hysteria/master/install_server.sh)
 - 自己用 `build.sh` (Linux) / `build.ps1` (Windows) 从源码编译
 
 ### Windows, macOS, Linux 客户端
