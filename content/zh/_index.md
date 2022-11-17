@@ -2,9 +2,13 @@
 title: "主页"
 ---
 
-# [![Logo](/assets/logo.png)](https://github.com/HyNetwork/hysteria)
+![Logo](/assets/logo.png)
 
 [![GitHub](/assets/github.png)](https://github.com/HyNetwork/hysteria)
+
+![AperNet](/assets/AperNetLogo.png)
+
+An [Aperture Internet Laboratory](https://apernet.io/) project
 
 Telegram [讨论群组](https://t.me/hysteria_github), [发布频道](https://t.me/hysteria_releases)
 
