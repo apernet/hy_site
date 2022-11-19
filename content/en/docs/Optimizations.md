@@ -3,25 +3,27 @@ title: "Optimizations"
 weight: 7
 ---
 
-### Optimizing for extreme transfer speeds
+### Optimizing for "long fat pipes"
 
-If you want to use Hysteria for very high speed transfers (e.g. 10GE, 1G+ over inter-country long fat pipes), consider
-increasing your system's UDP receive buffer size.
+Generally, these are the common bottlenecks that could limit your transfer speed (apart from the network itself):
+
+- Processing power of your CPU, NIC, etc. (not much to do other than upgrading your hardware)
+- System UDP buffer size
+- Hysteria's flow control receive window size
+
+If you want to use Hysteria for high speed transfers, you should increase your system's UDP receive buffer size.
 
 ```bash
-sysctl -w net.core.rmem_max=4000000
+sysctl -w net.core.rmem_max=4194304
 ```
 
-This would increase the buffer size to roughly 4 MB on Linux.
+This would increase the buffer size to 4 MB on Linux.
 
 You may also need to increase `recv_window_conn` and `recv_window` (`recv_window_client` on server side) to make sure
-they are at least no less than the bandwidth-delay product. For example, if you want to achieve a transfer speed of 500
-MB/s on a line with an RTT of 200 ms, you need a minimum receive window size of 100 MB (500*0.2).
+they are at least no less than the bandwidth-delay product. For example, if you want to achieve a transfer speed of 500 MB/s over a connection with an average RTT of 200 ms, you need a minimum receive window size of 100 MB (500*0.2).
 
 ### Routers and other embedded devices
 
-For devices with very limited computing power and RAM, turning off obfuscation can bring a slight performance boost.
+For devices with very limited computing power, turning off obfuscation can bring a slight (~10%) CPU performance boost.
 
-The default receive window size for both Hysteria server and client is 64 MB. Consider lowering them if it's too large
-for your device. Keeping a ratio of one to four between stream receive window and connection receive window is
-recommended.
+The default receive window size for both Hysteria server and client is 64 MB. If this is too large for your device, you can turn them down, but bear in mind that this could negatively affect your transfer speed. We recommend keeping the ratio of stream receive window and connection receive window at 2:5.
