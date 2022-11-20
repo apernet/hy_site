@@ -3,7 +3,7 @@ title: "优化"
 weight: 7
 ---
 
-### 针对超高传速度进行优化
+### 提升传输速度
 
 通常，除了网络本身以外，这些因素可能限制你的传输速度：
 
@@ -26,12 +26,12 @@ sysctl -w net.core.wmem_max=16777216
 ```bash
 sysctl -w kern.ipc.maxsockbuf=20971520
 sysctl -w net.inet.udp.recvspace=16777216
-# UDP 在 BSD 上没有 buffer，因此没有 "sendspace" 选项
+# BSD 上没有 UDP 发送 buffer，所以没有 "sendspace" 选项
 ```
 
 你可能还需要提高 `recv_window_conn` 和 `recv_window` (服务器端是 `recv_window_client`) 以确保它们至少不低于带宽-延迟的乘积。比如如果想在一条 RTT 200ms 的线路上达到 500 MB/s 的速度，receive window 至少需要 100 MB (500*0.2)
 
-### 路由器与其他嵌入式设备
+### 降低资源占用
 
 对于运算性能十分有限的嵌入式设备，关闭混淆 (obfs) 可以带来约 10% 的 CPU 性能提升。
 
