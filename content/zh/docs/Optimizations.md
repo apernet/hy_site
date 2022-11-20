@@ -11,13 +11,23 @@ weight: 7
 - 系统 UDP buffer 大小
 - Hysteria 的接收窗口大小
 
-如果要用 Hysteria 进行高速传输 ，请增加系统 UDP receive buffer 大小。
+如果要用 Hysteria 进行高速传输 ，请增加系统 UDP 的接收和发送 buffer 大小。
 
-```shell
-sysctl -w net.core.rmem_max=4194304
+#### Linux
+
+```bash
+# 将两个 buffer 都设置为 16 MB
+sysctl -w net.core.rmem_max=16777216
+sysctl -w net.core.wmem_max=16777216
 ```
 
-这个命令会在 Linux 下将 buffer 大小提升到 4 MB 左右。
+#### BSD/macOS
+
+```bash
+sysctl -w kern.ipc.maxsockbuf=20971520
+sysctl -w net.inet.udp.recvspace=16777216
+# UDP 在 BSD 上没有 buffer，因此没有 "sendspace" 选项
+```
 
 你可能还需要提高 `recv_window_conn` 和 `recv_window` (服务器端是 `recv_window_client`) 以确保它们至少不低于带宽-延迟的乘积。比如如果想在一条 RTT 200ms 的线路上达到 500 MB/s 的速度，receive window 至少需要 100 MB (500*0.2)
 
