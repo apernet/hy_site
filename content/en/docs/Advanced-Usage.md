@@ -8,7 +8,7 @@ weight: 3
 ```json
 {
   "listen": ":36712", // Listen address
-  "protocol": "faketcp", // Blank, "udp", "wechat-video", "faketcp"
+  "protocol": "faketcp", // "udp", "wechat-video", "faketcp". Empty = "udp"
   "acme": {
     "domains": [
       "your.domain.com",
@@ -34,7 +34,7 @@ weight: 3
     "mode": "passwords", // Mode, supports "none" "passwords" and "external". See external authentication page for details
     "config": ["yubiyubi", "random_password2", "Мать-Россия"]
   },
-  "alpn": "ayaya", // QUIC TLS ALPN
+  "alpn": "ayaya", // QUIC TLS ALPN, must be the same as the client
   "prometheus_listen": ":8080", // Prometheus HTTP metrics server listen address (at /metrics)
   "recv_window_conn": 15728640, // QUIC stream receive window
   "recv_window_client": 67108864, // QUIC connection receive window
@@ -109,7 +109,7 @@ When no scheme is provided and the address is just an IP address, it wil be assu
 ```json
 {
   "server": "example.com:36712", // Server address
-  "protocol": "faketcp", // Blank, "udp", "wechat-video", "faketcp"
+  "protocol": "faketcp", // "udp", "wechat-video", "faketcp". Empty = "udp"
   "up": "10 Mbps", // Max upload speed, mutually exclusive with "up_mbps" below
   "up_mbps": 10, // Max upload Mbps
   "down": "50 Mbps", // Max download speed, mutually exclusive with "down_mbps" below
@@ -184,7 +184,7 @@ When no scheme is provided and the address is just an IP address, it wil be assu
   "obfs": "AMOGUS", // Obfuscation password
   "auth": "[BASE64]", // Authentication payload in Base64
   "auth_str": "yubiyubi", // Authentication payload in string, mutually exclusive with the option above
-  "alpn": "ayaya", // QUIC TLS ALPN
+  "alpn": "ayaya", // QUIC TLS ALPN, must be the same as the server
   "server_name": "real.name.com", // TLS hostname used to verify the server certificate
   "insecure": false, // Ignore all certificate errors 
   "ca": "my.ca", // Custom CA file

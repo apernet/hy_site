@@ -139,7 +139,13 @@ Hysteria protocol implementations SHOULD provide a standard traffic obfuscation 
 [16-byte salt][obfuscated payload]
 ```
 
-For each QUIC packet, the obfuscator MUST calculate the SHA-256 hash of a randomly generated 16-byte salt appended to a fixed user-provided pre-shared key. The hash is then used to obfuscate the payload using the following XOR algorithm:
+For each QUIC packet, the obfuscator MUST calculate the SHA-256 hash of a randomly generated 16-byte salt appended to a fixed user-provided pre-shared key.
+
+```
+hash = SHA-256(key + salt)
+```
+
+The hash is then used to obfuscate the payload using the following XOR algorithm:
 
 ```
 for i = 0 to len(payload) - 1

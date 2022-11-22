@@ -8,7 +8,7 @@ weight: 3
 ```json
 {
   "listen": ":36712", // 监听地址
-  "protocol": "faketcp", // 留空或 "udp", "wechat-video", "faketcp"
+  "protocol": "faketcp", // "udp", "wechat-video", "faketcp" 留空默认 "udp"
   "acme": {
     "domains": [
       "your.domain.com",
@@ -22,11 +22,11 @@ weight: 3
   },
   "cert": "/home/ubuntu/my_cert.crt", // 证书
   "key": "/home/ubuntu/my_key.crt", // 证书密钥
-  "up": "100 Mbps", // 单客户端最大上传速度，和 "up_mbps" 互斥
+  "up": "100 Mbps", // 单客户端最大上传速度，和 "up_mbps" 二选一
   "up_mbps": 100, // 单客户端最大上传速度 Mbps
-  "down": "100 Mbps", // 单客户端最大下载速度，和 "down_mbps" 互斥
+  "down": "100 Mbps", // 单客户端最大下载速度，和 "down_mbps" 二选一
   "down_mbps": 100, // 单客户端最大下载速度 Mbps
-  "disable_udp": false, // 禁用 UDP 支持
+  "disable_udp": false, // 禁用 UDP 转发
   "acl": "my_list.acl", // 见 ACL 页
   "mmdb": "GeoLite2-Country.mmdb", // MaxMind IP 库 (ACL)
   "obfs": "AMOGUS", // 混淆密码
@@ -34,7 +34,7 @@ weight: 3
     "mode": "passwords", // 验证模式，目前支持 "none", "passwords", "external"。关于 external 见 外部验证接入 页面
     "config": ["yubiyubi", "random_password2", "Мать-Россия"]
   },
-  "alpn": "ayaya", // QUIC TLS ALPN
+  "alpn": "ayaya", // QUIC TLS ALPN, 必须和客户端一致
   "prometheus_listen": ":8080", // Prometheus 统计接口监听地址 (在 /metrics)
   "recv_window_conn": 15728640, // QUIC stream receive window
   "recv_window_client": 67108864, // QUIC connection receive window
@@ -108,10 +108,10 @@ Hysteria 支持多种 DNS 协议。
 ```json
 {
   "server": "example.com:36712", // 服务器地址
-  "protocol": "faketcp", // 留空或 "udp", "wechat-video", "faketcp"
-  "up": "10 Mbps", // 最大上传速度，和 "up_mbps" 互斥
+  "protocol": "faketcp", // "udp", "wechat-video", "faketcp" 留空默认 "udp"
+  "up": "10 Mbps", // 最大上传速度，和 "up_mbps" 二选一
   "up_mbps": 10, // 最大上传速度 Mbps
-  "down": "50 Mbps", // 最大下载速度，和 "down_mbps" 互斥
+  "down": "50 Mbps", // 最大下载速度，和 "down_mbps" 二选一
   "down_mbps": 50, // 最大下载速度 Mbps
   "retry": 3, // 启动时连接服务器的重试次数。默认为 0 不重试，负数为无限重试
   "retry_interval": 5, // 重试间隔，单位为秒
@@ -122,7 +122,7 @@ Hysteria 支持多种 DNS 协议。
   "socks5": {
     "listen": "127.0.0.1:1080", // SOCKS5 监听地址
     "timeout": 300, // TCP 超时秒数
-    "disable_udp": false, // 禁用 UDP 支持
+    "disable_udp": false, // 禁用 UDP 转发
     "user": "me", // SOCKS5 验证用户名
     "password": "lmaolmao" // SOCKS5 验证密码
   },
@@ -183,7 +183,7 @@ Hysteria 支持多种 DNS 协议。
   "obfs": "AMOGUS", // 混淆密码
   "auth": "[BASE64]", // Base64 验证密钥
   "auth_str": "yubiyubi", // 字符串验证密钥，和上面的选项二选一
-  "alpn": "ayaya", // QUIC TLS ALPN
+  "alpn": "ayaya", // QUIC TLS ALPN, 必须和服务端一致
   "server_name": "real.name.com", // 用于验证服务端证书的 hostname
   "insecure": false, // 忽略一切证书错误 
   "ca": "my.ca", // 自定义 CA
@@ -197,7 +197,7 @@ Hysteria 支持多种 DNS 协议。
 
 #### 伪装 TCP (faketcp 模式)
 
-某些网络可能对 UDP 流量施加各种限制，或者完全屏蔽。Hysteria 提供了一个 "faketcp" 模式，让服务端与客户端之间用看起来是 TCP 但实际不走
+某些网络可能限制或者完全屏蔽 UDP 流量。Hysteria 提供了一个 "faketcp" 模式，让服务端与客户端之间用看起来是 TCP 但实际不走
 系统 TCP 栈的方式通信。通过这种方式可以让防火墙、QoS 设备认为这是真的 TCP 连接，绕过对 UDP 的限制。
 
 目前只在 Linux 上支持（客户端和服务器都是），并且需要 root 权限。
