@@ -191,6 +191,7 @@ When no scheme is provided and the address is just an IP address, it wil be assu
   "recv_window_conn": 15728640, // QUIC stream receive window
   "recv_window": 67108864, // QUIC connection receive window
   "disable_mtu_discovery": false, // Disable Path MTU Discovery (RFC 8899)
+  "fast_open": false, // Enable fast open (reduce connection establishment latency)
   "resolver": "udp://1.1.1.1:53", // DNS resolver address
   "resolve_preference": "64" // DNS IPv4/IPv6 preference. Available options: "64" (IPv6 first, fallback to IPv4), "46" (IPv4 first, fallback to IPv6), "6" (IPv6 only), "4" (IPv4 only)
 }
@@ -216,3 +217,7 @@ References:
 - https://powerdns.org/tproxydoc/tproxy.md.html
 - https://v2.gost.run/en/redirect/
 - https://www.linuxtopia.org/Linux_Firewall_iptables/x4508.html
+
+#### Fast Open
+
+Fast Open can shave off one RTT for every connection at the cost of the correct semantics of SOCKS5/HTTP/TUN protocols. When enabled, the client will always accept a connection immediately without confirming with the server that its destination is reachable. If the server then fails to connect or rejects the connection, the client will just close it without sending any data.

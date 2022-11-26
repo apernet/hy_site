@@ -190,6 +190,7 @@ Hysteria 支持多种 DNS 协议。
   "recv_window_conn": 15728640, // QUIC stream receive window
   "recv_window": 67108864, // QUIC connection receive window
   "disable_mtu_discovery": false, // 禁用 MTU 探测 (RFC 8899)
+  "fast_open": false, // 启用 Fast Open (降低连接建立延迟)
   "resolver": "udp://1.1.1.1:53", // DNS 地址
   "resolve_preference": "64" // DNS IPv4/IPv6 优先级。可用选项 "64" (IPv6 优先，可回落到 IPv4) "46" (IPv4 优先，可回落到 IPv6) "6" (仅 IPv6) "4" (仅 IPv4)
 }
@@ -213,3 +214,7 @@ TPROXY 和 REDIRECT 模式 (`tproxy_tcp`, `tproxy_udp`, `redirect_tcp`) 只在 L
 - https://powerdns.org/tproxydoc/tproxy.md.html
 - https://v2.gost.run/redirect/
 - https://www.linuxtopia.org/Linux_Firewall_iptables/x4508.html
+
+#### Fast Open
+
+Fast Open 可以为每个连接建立的过程减少一个 RTT ，但代价是牺牲了 SOCKS5/HTTP/TUN 协议的正确语义。当开启时，客户端会始终马上接受任何连接，不会先和服务端确认是否能连通目标地址。如果随后发现服务端到目标地址连接失败，客户端也会不收发任何数据直接关闭连接。
