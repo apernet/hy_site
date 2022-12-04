@@ -33,6 +33,14 @@ The client will randomly select a port to connect to, and randomly hop to a new 
 
 Forwarding UDP ports 20000-50000 on eth0 to port 5666 on Linux:
 
+First check the network interface controllers used by the server
+
+```shell
+ifconfig
+```
+
+After confirming that the network interface controller is `eth0`，set port forwarding:
+
 ```bash
 # IPv4
 iptables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :5666
