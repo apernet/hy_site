@@ -33,7 +33,7 @@ The client will randomly select a port to connect to, and randomly hop to a new 
 
 Forwarding UDP ports 20000-50000 on eth0 to port 5666 on Linux:
 
-First check the network interface controllers used by the server
+First check the network interface controllers used by the server:
 
 ```shell
 ifconfig
