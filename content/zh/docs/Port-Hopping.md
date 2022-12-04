@@ -33,7 +33,8 @@ server:port1,port2-port3,...
 
 以 Linux 为例，将 eth0 上的 UDP 20000-50000 端口转发到 5666 端口：
 
-先查看服务器使用的网卡
+先查看服务器使用的网卡:
+
 ```shell
 ifconfig
 ```
