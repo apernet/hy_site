@@ -33,6 +33,13 @@ server:port1,port2-port3,...
 
 以 Linux 为例，将 eth0 上的 UDP 20000-50000 端口转发到 5666 端口：
 
+先查看服务器使用的网卡
+```shell
+ifconfig
+```
+
+确定网卡为`eth0`后，配置端口转发:
+
 ```bash
 # IPv4
 iptables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :5666
