@@ -3,6 +3,19 @@ title: "高级用法"
 weight: 3
 ---
 
+> **注意**
+>
+> 下面的示例中， 值为 `false` 的选项表示该选项的默认值为 `false`，
+> 如需激活选项对应的功能， 实际配置时请将 `false` 改为 `true`。
+>
+> 例如：
+> + `"insecure": false, // 忽略一切证书错误`：<br>
+>   未设置这一选项或者设置为 `false` 均表示 **不忽略** 证书错误。<br>
+>   如欲忽略所有证书错误， 配置文件里要写 `"insecure": true`。
+> + `"disable_udp": false, // 禁用 UDP 转发`：<br>
+>   未设置这一项或者设置为 `false` 均表示 **不禁用** （允许） UDP 转发。<br>
+>   如欲禁用 UDP 转发， 配置文件里要写 `"disable_udp": true`。
+
 ### 服务器
 
 ```json
