@@ -40,8 +40,8 @@ weight: 3
   "down": "100 Mbps", // 单客户端最大下载速度，和 "down_mbps" 二选一
   "down_mbps": 100, // 单客户端最大下载速度 Mbps
   "disable_udp": false, // 禁用 UDP 转发
-  "acl": "my_list.acl", // 见 ACL 页
-  "mmdb": "GeoLite2-Country.mmdb", // MaxMind IP 库 (ACL)
+  "acl": "my_list.acl", // （可选）见 ACL 页
+  "mmdb": "GeoLite2-Country.mmdb", // （可选） MaxMind IP 库 (ACL)
   "obfs": "AMOGUS", // 混淆密码
   "auth": { // 验证
     "mode": "passwords", // 验证模式，目前支持 "none", "passwords", "external"。关于 external 见 外部验证接入 页面
@@ -191,8 +191,8 @@ Hysteria 支持多种 DNS 协议。
     "listen": "127.0.0.1:9500", // TCP 重定向监听地址
     "timeout": 300 // TCP 超时秒数
   },
-  "acl": "my_list.acl", // 见 ACL 页
-  "mmdb": "GeoLite2-Country.mmdb", // MaxMind IP 库 (ACL)
+  "acl": "my_list.acl", // （可选）见 ACL 页
+  "mmdb": "GeoLite2-Country.mmdb", // （可选） MaxMind IP 库 (ACL)
   "obfs": "AMOGUS", // 混淆密码
   "auth": "[BASE64]", // Base64 验证密钥
   "auth_str": "yubiyubi", // 字符串验证密钥，和上面的选项二选一
