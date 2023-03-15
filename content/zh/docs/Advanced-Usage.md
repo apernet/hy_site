@@ -204,6 +204,7 @@ Hysteria 支持多种 DNS 协议。
   "recv_window": 67108864, // QUIC connection receive window
   "disable_mtu_discovery": false, // 禁用 MTU 探测 (RFC 8899)
   "fast_open": false, // 启用 Fast Open (降低连接建立延迟)
+  "lazy_start": false, // 收到第一个代理请求时才开始连接服务端
   "resolver": "udp://1.1.1.1:53", // DNS 地址
   "resolve_preference": "64" // DNS IPv4/IPv6 优先级。可用选项 "64" (IPv6 优先，可回落到 IPv4) "46" (IPv4 优先，可回落到 IPv6) "6" (仅 IPv6) "4" (仅 IPv4)
 }

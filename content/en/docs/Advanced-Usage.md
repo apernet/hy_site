@@ -192,6 +192,7 @@ When no scheme is provided and the address is just an IP address, it wil be assu
   "recv_window": 67108864, // QUIC connection receive window
   "disable_mtu_discovery": false, // Disable Path MTU Discovery (RFC 8899)
   "fast_open": false, // Enable fast open (reduce connection establishment latency)
+  "lazy_start": false, // Connect to the server only when there is an incoming connection
   "resolver": "udp://1.1.1.1:53", // DNS resolver address
   "resolve_preference": "64" // DNS IPv4/IPv6 preference. Available options: "64" (IPv6 first, fallback to IPv4), "46" (IPv4 first, fallback to IPv6), "6" (IPv6 only), "4" (IPv4 only)
 }
