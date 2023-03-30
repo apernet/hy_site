@@ -32,6 +32,8 @@ weight: 1
 
 - [Stash](https://apps.apple.com/app/stash/id1596063349)
 - [Shadowrocket](https://apps.apple.com/us/app/shadowrocket/id932747118)
+- [Singbox for iOS](https://testflight.apple.com/join/c6ylui2j) with [Singbox config](https://sing-box.sagernet.org/configuration/inbound/hysteria/)
+- [Pharos Pro](https://apps.apple.com/app/pharos-pro/id1456610173) with [Clash.Meta config](https://docs.metacubex.one/function/proxy/hysteria)
 
 ### Which build should I choose?
 
