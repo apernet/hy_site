@@ -1,4 +1,4 @@
-baseURL = 'https://hysteria.network'
+baseURL = 'https://v1.hysteria.network'
 title = 'Hysteria'
 theme = 'hugo-book'
 
